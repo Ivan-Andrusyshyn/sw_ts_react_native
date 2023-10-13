@@ -8,8 +8,7 @@ The app makes an API request to (https://swapi.dev/) to retrieve character infor
 
 ### Demo
 
-You can experience the app by visiting the following Expo project link: https://expo.dev/@ivandev29/AwesomeProject
-
+You can experience the app by visiting the following Expo project link: [https://expo.dev/@ivandev29/AwesomeProject](https://expo.dev/accounts/ivandev29/projects/sw-fans-app/builds/74c18338-ef81-4ce8-91b5-ef8e2ee01ae3) sharable URL for your (and a QR code). Open it on any of the registered devices and start testing the app with a single click of the installation button.You can install this app.
 ## Installation
 
 To run the app locally, you'll need Node.js, npm (or yarn), and Expo CLI installed on your machine.
