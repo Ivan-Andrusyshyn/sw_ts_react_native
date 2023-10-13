@@ -29,10 +29,6 @@ const CharacterListScreen: React.FC = () => {
     clearLikes,
   } = useLikesContext();
 
-  useEffect(() => {
-    fetchCharacters(1);
-  }, []);
-
   const navigateToCharacterDetail = (characterName: string) => {
     loadCharacterDetails(characterName);
     navigation.navigate("CharacterDetail" as never);

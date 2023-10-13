@@ -52,17 +52,17 @@ const CharacterDetailScreen: React.FC = () => {
                 value={`${characterDetails.mass} kg`}
               />
               <CharacterInfoItem
-                label="Hair Color"
+                label="Hair "
                 value={characterDetails.hair_color}
                 color={characterDetails.hair_color}
               />
               <CharacterInfoItem
-                label="Skin Color"
+                label="Skin "
                 value={characterDetails.skin_color}
                 color={characterDetails.skin_color}
               />
               <CharacterInfoItem
-                label="Eye Color"
+                label="Eye "
                 value={characterDetails.eye_color}
                 color={characterDetails.eye_color}
               />

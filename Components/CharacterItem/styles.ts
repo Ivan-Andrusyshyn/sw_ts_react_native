@@ -7,7 +7,7 @@ const styles = StyleSheet.create({
     border: 1,
     borderColor: "#ccc",
     borderWidth: 1,
-    padding: 16,
+    paddingRight: 16,
   },
   characterField: {
     flex: 1,
@@ -17,8 +17,23 @@ const styles = StyleSheet.create({
   charInfo: {
     flexDirection: "row",
     alignItems: "center",
-    marginLeft: 10,
+    paddingTop: 16,
+    paddingBottom: 16,
+  },
+  itemInfoContainer: {
+    flexDirection: "row",
     justifyContent: "space-between",
+    alignItems: "center",
+    paddingRight: 16,
+  },
+  iconWrapper: {
+    paddingTop: 16,
+    paddingLeft: 16,
+    paddingBottom: 16,
+    paddingRight: 8,
+    alignItems: "center",
+    height: "100%",
+    flexDirection: "row",
   },
 });
 export default styles;

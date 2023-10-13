@@ -1,5 +1,11 @@
 import axios from "axios";
-import React, { createContext, useContext, ReactNode, useState } from "react";
+import React, {
+  createContext,
+  useContext,
+  ReactNode,
+  useState,
+  useEffect,
+} from "react";
 import {
   Character,
   CharacterContextType,
@@ -22,7 +28,10 @@ export const CharacterProvider: React.FC<{ children: ReactNode }> = ({
 
   const fetchCharacters = async (pageNumber: number) => {
     try {
+      if (pageNumber > 9) return;
+
       setLoading(true);
+
       const response = await axios.get(
         `https://swapi.dev/api/people/?page=${pageNumber}`
       );
@@ -50,7 +59,7 @@ export const CharacterProvider: React.FC<{ children: ReactNode }> = ({
             birth_year,
             gender,
             url,
-            homeworld: homeworldData ? homeworldData.name : "",
+            homeworld: homeworldData ? homeworldData.name : "...",
             species: speciesData ? speciesData.name : "",
           };
         }
@@ -67,6 +76,9 @@ export const CharacterProvider: React.FC<{ children: ReactNode }> = ({
     }
   };
 
+  useEffect(() => {
+    fetchCharacters(1);
+  }, []);
   const loadCharacterDetails = async (characterUrl: string) => {
     setLoading(true);
     try {
