@@ -32,6 +32,9 @@ const styles = StyleSheet.create({
   },
   detailColor: {
     flexDirection: "row",
+    borderWidth: 1,
+    padding: 4,
+    borderRadius: 6,
     alignItems: "center",
     justifyContent: "space-between",
     gap: 10,

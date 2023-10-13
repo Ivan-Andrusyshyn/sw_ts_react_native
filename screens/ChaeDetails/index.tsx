@@ -29,9 +29,7 @@ const CharacterDetailScreen: React.FC = () => {
         <ActivityIndicator size="large" color="#000" style={styles.loading} />
       ) : characterDetails ? (
         <View style={styles.characterInfo}>
-          <Text style={styles.characterName}>
-            Name: {characterDetails.name}
-          </Text>
+          <Text style={styles.characterName}>{characterDetails.name}</Text>
           <View style={styles.mainWrapper}>
             <View style={styles.avatarWrapper}>
               <Ionicons name="person-outline" size={84} color="#777" />
