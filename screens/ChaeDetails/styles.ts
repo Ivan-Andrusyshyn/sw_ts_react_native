@@ -4,7 +4,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 16,
-    backgroundColor: "#ccc",
+    backgroundColor: "#eee",
   },
   characterInfo: {
     marginTop: 16,
@@ -45,7 +45,7 @@ const styles = StyleSheet.create({
   },
   avatarWrapper: {
     borderWidth: 1,
-    borderColor: "#fff",
+    borderColor: "#777",
     width: 110,
     height: 110,
     borderRadius: 4,

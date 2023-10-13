@@ -34,7 +34,7 @@ const CharacterDetailScreen: React.FC = () => {
           </Text>
           <View style={styles.mainWrapper}>
             <View style={styles.avatarWrapper}>
-              <Ionicons name="person-outline" size={84} color="#fff" />
+              <Ionicons name="person-outline" size={84} color="#777" />
             </View>
             <View style={styles.infoCharWrapper}>
               <CharacterInfoItem
