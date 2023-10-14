@@ -11,10 +11,11 @@ Additionally, users can sort characters alphabetically and search for specific c
 
 # How to open an app on Android
 
+![Alt Text](Android.png)
 
 
 # How to open an app on IOS
-
+![Alt Text](IOS.png)
 
 
 ## Installation
