@@ -4,7 +4,7 @@ const styles = StyleSheet.create({
   charHeaderContainer: {
     flexDirection: "row",
     justifyContent: "center",
-    backgroundColor: "#fff",
+    backgroundColor: "#f6f5f3",
     padding: 10,
     height: 60,
     gap: 8,
