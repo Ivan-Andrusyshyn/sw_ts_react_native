@@ -1,14 +1,22 @@
 # Star Wars Favorites - React Native App
 
 ## Project Overview
+This mobile application, developed using React Native, allows users to select their favorite characters from the Star Wars universe and specify their gender. It also displays the total count of favorite characters based on gender, including males, females, and characters of other genders from the entire Star Wars universe.
 
-This mobile application, built with React Native, allows users to indicate their favorite Star Wars characters' gender and displays the total number of male, female, and other favorite characters across the Star Wars Universe.
+The app makes API requests to (https://swapi.dev/) to fetch character information. Users can browse a list of retrieved characters, access detailed character profiles, mark them as favorites, and calculate the total number of characters for each gender.
 
-The app makes an API request to (https://swapi.dev/) to retrieve character information. Users can view a list of retrieved characters, access detailed character information, add characters to their favorites, and calculate totals based on gender.
+Additionally, users can sort characters alphabetically and search for specific characters on the page using keywords or initials. The advantage of local storage ensures that users don't need to worry about losing their favorite characters, as they will be preserved across sessions.
 
-### Demo
 
-You can experience the app by visiting the following Expo project link: [https://expo.dev/@ivandev29/AwesomeProject](https://expo.dev/accounts/ivandev29/projects/sw-fans-app/builds/74c18338-ef81-4ce8-91b5-ef8e2ee01ae3) sharable URL for your (and a QR code). Open it on any of the registered devices and start testing the app with a single click of the installation button.You can install this app.
+
+# How to open an app on Android
+
+
+
+# How to open an app on IOS
+
+
+
 ## Installation
 
 To run the app locally, you'll need Node.js, npm (or yarn), and Expo CLI installed on your machine.
