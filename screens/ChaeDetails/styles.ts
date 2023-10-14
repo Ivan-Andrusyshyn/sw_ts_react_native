@@ -3,12 +3,13 @@ import { StyleSheet } from "react-native";
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 16,
+    padding: 8,
     backgroundColor: "#eee",
   },
   characterInfo: {
     marginTop: 16,
-    border: "1px solid #ddd",
+    borderColor: "#ddd",
+    borderWidth: 1,
     padding: 16,
   },
   characterName: {
@@ -21,7 +22,7 @@ const styles = StyleSheet.create({
   characterDetail: {
     fontSize: 16,
     color: "#555",
-    padding: 5,
+    padding: 2,
   },
   notFound: {
     fontSize: 24,
@@ -37,11 +38,9 @@ const styles = StyleSheet.create({
     borderRadius: 6,
     alignItems: "center",
     justifyContent: "space-between",
-    gap: 10,
+    marginVertical: 4,
   },
-  infoCharWrapper: {
-    marginLeft: 10,
-  },
+  infoCharWrapper: {},
   mainWrapper: {
     justifyContent: "space-between",
     flexDirection: "row",
@@ -59,8 +58,13 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   colorBlock: {
-    width: 20,
-    height: 20,
+    width: 15,
+    height: 15,
+  },
+  favoriteWrapper: {
+    marginTop: 15,
+    flexDirection: "row",
   },
 });
+
 export default styles;

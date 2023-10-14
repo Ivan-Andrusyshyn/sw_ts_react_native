@@ -20,18 +20,12 @@ const CharacterListScreen: React.FC = () => {
   } = useCharacterContext();
   const navigation = useNavigation();
   const [page, setPage] = useState(1);
-  const {
-    maleLikes,
-    femaleLikes,
-    otherLikes,
-    clickedHearts,
-    toggleLike,
-    clearLikes,
-  } = useLikesContext();
+  const { maleLikes, femaleLikes, otherLikes, likedCharacters, toggleLike } =
+    useLikesContext();
 
   const navigateToCharacterDetail = (characterName: string) => {
     loadCharacterDetails(characterName);
-    navigation.navigate("CharacterDetail" as never);
+    navigation.navigate("Details" as never);
   };
 
   const changePage = (pageNumber: number) => {
@@ -45,7 +39,6 @@ const CharacterListScreen: React.FC = () => {
         maleLikes={maleLikes}
         femaleLikes={femaleLikes}
         otherLikes={otherLikes}
-        clearLikes={clearLikes}
       />
       <CharHeader />
       <CharSearch />
@@ -62,7 +55,7 @@ const CharacterListScreen: React.FC = () => {
               character={item}
               toggleLike={toggleLike}
               navigateToCharacterDetail={navigateToCharacterDetail}
-              clickedHearts={clickedHearts}
+              likedCharacters={likedCharacters}
             />
           )}
           onEndReachedThreshold={0.1}

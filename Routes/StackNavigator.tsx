@@ -2,6 +2,8 @@ import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 import CharacterListScreen from "../screens/CharList";
 import CharacterDetailScreen from "../screens/ChaeDetails";
+import { Button } from "react-native";
+import ClearLikesBtn from "../Components/ClearBtn";
 
 const Stack = createStackNavigator();
 
@@ -14,18 +16,19 @@ const StackNavigator: React.FC = () => {
         options={{
           headerStyle: {
             height: 80,
-            backgroundColor: "#a5884f",
+            backgroundColor: "#d1af6c",
           },
           headerTintColor: "#fff",
+          headerRight: () => <ClearLikesBtn />,
         }}
       />
       <Stack.Screen
-        name="CharacterDetail"
+        name="Details"
         component={CharacterDetailScreen}
         options={{
           headerStyle: {
             height: 80,
-            backgroundColor: "#a5884f",
+            backgroundColor: "#d1af6c",
           },
           headerTintColor: "#fff",
         }}

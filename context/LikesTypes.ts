@@ -2,7 +2,7 @@ type LikesContextType = {
   maleLikes: number;
   femaleLikes: number;
   otherLikes: number;
-  clickedHearts: Set<string>;
+  likedCharacters: string[];
   toggleLike: (characterName: string, gender: string) => void;
   clearLikes: () => void;
 };

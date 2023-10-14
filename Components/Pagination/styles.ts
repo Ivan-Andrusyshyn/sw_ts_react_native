@@ -17,6 +17,9 @@ const styles = StyleSheet.create({
   },
   buttonPagination: {
     width: 40,
+    height: 40,
+    justifyContent: "center",
+    alignContent: "center",
   },
 });
 export default styles;

@@ -9,7 +9,6 @@ const styles = StyleSheet.create({
     paddingRight: 4,
     paddingLeft: 4,
     backgroundColor: "#f6f5f3",
-    justifyContent: "space-between",
   },
   loaderContainer: {
     flex: 1,

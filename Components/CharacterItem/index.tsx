@@ -7,19 +7,22 @@ import {
 } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import styles from "./styles";
+
 interface PropCharItem {
   character: Character;
   navigateToCharacterDetail: (characterIndex: string) => void;
-  clickedHearts: Set<string>;
+  likedCharacters: string[];
   toggleLike: (characterName: string, gender: string) => void;
 }
 
 const CharacterItem: React.FC<PropCharItem> = ({
   character,
   navigateToCharacterDetail,
-  clickedHearts,
+  likedCharacters,
   toggleLike,
 }) => {
+  const isLiked = likedCharacters.includes(character.name);
+
   const handleLikedItems = (e: GestureResponderEvent, name: string) => {
     toggleLike(name, character.gender);
   };
@@ -31,9 +34,9 @@ const CharacterItem: React.FC<PropCharItem> = ({
         onPress={(e) => handleLikedItems(e, character.name)}
       >
         <MaterialCommunityIcons
-          name={clickedHearts.has(character.name) ? "heart" : "heart-outline"}
+          name={isLiked ? "heart" : "heart-outline"}
           size={20}
-          color={clickedHearts.has(character.name) ? "red" : "gray"}
+          color={isLiked ? "red" : "gray"}
         />
       </TouchableOpacity>
       <TouchableOpacity
