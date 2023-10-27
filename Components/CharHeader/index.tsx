@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Text, TouchableOpacity } from "react-native";
+import { Text, TouchableOpacity, ScrollView } from "react-native";
 import { MaterialCommunityIcons, AntDesign } from "@expo/vector-icons";
 import { useCharacterContext } from "../../context/CharacterContext";
 import styles from "./styles";
@@ -32,38 +32,40 @@ const CharHeader = () => {
     }
   };
   return (
-    <DataTable style={styles.tableHeader}>
-      <DataTable.Header style={styles.tableContainer}>
-        {tableHeaders.map((header, index) => (
-          <DataTable.Title
-            key={index}
-            style={
-              header.label === "heart"
-                ? styles.tableNameTitle
-                : styles.tableTitle
-            }
-          >
-            {header.label === "Name" ? (
-              <TouchableOpacity
-                onPress={handleSortClick}
-                style={styles.nameWrapper}
-              >
-                <Text style={styles.headerOptionsText}>{header.label}</Text>
-                {handleChangeIcon()}
-              </TouchableOpacity>
-            ) : header.label === "heart" ? (
-              <MaterialCommunityIcons
-                name={header.label}
-                size={20}
-                color="#000"
-              />
-            ) : (
-              header.label
-            )}
-          </DataTable.Title>
-        ))}
-      </DataTable.Header>
-    </DataTable>
+    <ScrollView horizontal={true}>
+      <DataTable style={styles.tableHeader}>
+        <DataTable.Header style={styles.tableContainer}>
+          {tableHeaders.map((header, index) => (
+            <DataTable.Title
+              key={index}
+              style={
+                header.label === "heart"
+                  ? styles.tableNameTitle
+                  : styles.tableTitle
+              }
+            >
+              {header.label === "Name" ? (
+                <TouchableOpacity
+                  onPress={handleSortClick}
+                  style={styles.nameWrapper}
+                >
+                  <Text style={styles.headerOptionsText}>{header.label}</Text>
+                  {handleChangeIcon()}
+                </TouchableOpacity>
+              ) : header.label === "heart" ? (
+                <MaterialCommunityIcons
+                  name={header.label}
+                  size={20}
+                  color="#000"
+                />
+              ) : (
+                header.label
+              )}
+            </DataTable.Title>
+          ))}
+        </DataTable.Header>
+      </DataTable>
+    </ScrollView>
   );
 };
 

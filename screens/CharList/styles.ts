@@ -2,10 +2,7 @@ import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     padding: 0,
-    borderWidth: 1,
-    borderColor: "#ccc",
     paddingRight: 4,
     paddingLeft: 4,
     backgroundColor: "#f6f5f3",
@@ -18,6 +15,13 @@ const styles = StyleSheet.create({
   characterField: {
     flex: 1,
     textAlign: "center",
+  },
+  tableList: {
+    paddingVertical: 0,
+    width: 415,
+    paddingHorizontal: 0,
+    borderLeftColor: "#ccc",
+    borderLeftWidth: 1,
   },
 });
 

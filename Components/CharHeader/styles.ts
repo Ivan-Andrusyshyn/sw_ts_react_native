@@ -4,6 +4,9 @@ const styles = StyleSheet.create({
   tableHeader: {
     display: "flex",
     paddingVertical: 0,
+    borderWidth: 1,
+    width: 410,
+    borderColor: "#ccc",
   },
   iconHeart: {
     width: 20,
@@ -26,12 +29,15 @@ const styles = StyleSheet.create({
   },
   tableNameTitle: {
     flex: 0,
-    width: 40,
+    width: 38,
   },
   tableTitle: {
     justifyContent: "center",
     flex: 1,
     borderLeftWidth: 1,
+    paddingVertical: 16,
+    paddingHorizontal: 12,
+
     borderLeftColor: "#ccc",
   },
   nameWrapper: {

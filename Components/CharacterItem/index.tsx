@@ -1,19 +1,13 @@
-import { Character } from "../../context/characterTypes";
 import {
   TouchableOpacity,
   View,
-  Text,
   GestureResponderEvent,
+  ScrollView,
 } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import styles from "./styles";
-
-interface PropCharItem {
-  character: Character;
-  navigateToCharacterDetail: (characterIndex: string) => void;
-  likedCharacters: string[];
-  toggleLike: (characterName: string, gender: string) => void;
-}
+import { DataTable } from "react-native-paper";
+import { PropCharItem } from "./types";
 
 const CharacterItem: React.FC<PropCharItem> = ({
   character,
@@ -43,13 +37,24 @@ const CharacterItem: React.FC<PropCharItem> = ({
         style={styles.itemInfoContainer}
         onPress={() => navigateToCharacterDetail(character.url)}
       >
-        <View style={styles.charInfo}>
-          <Text style={styles.characterField}>{character.name}</Text>
-          <Text style={styles.characterField}>{character.birth_year}</Text>
-          <Text style={styles.characterField}>{character.gender}</Text>
-          <Text style={styles.characterField}>{character.homeworld}</Text>
-          <Text style={styles.characterField}>{character.species}</Text>
-        </View>
+        <DataTable.Row style={styles.charInfo}>
+          <DataTable.Cell style={styles.characterMain}>
+            {character.name}
+          </DataTable.Cell>
+
+          <DataTable.Cell style={styles.characterMain}>
+            {character.gender}
+          </DataTable.Cell>
+          <DataTable.Cell style={styles.characterField}>
+            {character.homeworld}
+          </DataTable.Cell>
+          <DataTable.Cell style={styles.characterField}>
+            {character.birth_year}
+          </DataTable.Cell>
+          <DataTable.Cell style={styles.characterField}>
+            {character.species}
+          </DataTable.Cell>
+        </DataTable.Row>
       </TouchableOpacity>
     </View>
   );
