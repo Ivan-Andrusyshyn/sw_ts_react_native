@@ -32,7 +32,7 @@ const CharHeader = () => {
     }
   };
   return (
-    <ScrollView horizontal={true}>
+    <ScrollView horizontal={true} style={{ flexGrow: 0 }}>
       <DataTable style={styles.tableHeader}>
         <DataTable.Header style={styles.tableContainer}>
           {tableHeaders.map((header, index) => (

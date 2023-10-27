@@ -5,6 +5,7 @@ const styles = StyleSheet.create({
     padding: 0,
     paddingRight: 4,
     paddingLeft: 4,
+    flex: 1,
     backgroundColor: "#f6f5f3",
   },
   loaderContainer: {
@@ -19,6 +20,7 @@ const styles = StyleSheet.create({
   tableList: {
     paddingVertical: 0,
     width: 415,
+    flex: 1,
     paddingHorizontal: 0,
     borderLeftColor: "#ccc",
     borderLeftWidth: 1,

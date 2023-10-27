@@ -14,10 +14,10 @@ const CharSearch = () => {
 
   return (
     <View style={styles.searchContainer}>
-      <AntDesign name="search1" size={24} color="black" />
+      <AntDesign name="search1" size={22} color="black" />
       <TextInput
         style={styles.searchTextInput}
-        placeholder="Search..."
+        placeholder="Search char..."
         value={searchText}
         onChangeText={handleSearch}
       />

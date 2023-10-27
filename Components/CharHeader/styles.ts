@@ -29,6 +29,8 @@ const styles = StyleSheet.create({
   },
   tableNameTitle: {
     flex: 0,
+    display: "flex",
+    alignItems: "center",
     width: 38,
   },
   tableTitle: {
