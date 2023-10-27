@@ -1,31 +1,43 @@
 import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
-  header: {
-    flexDirection: "row",
-    justifyContent: "space-around",
-    borderWidth: 1,
-    borderColor: "#ccc",
-    paddingTop: 8,
-    paddingLeft: 16,
-    paddingBottom: 8,
-    alignItems: "center",
+  tableHeader: {
+    display: "flex",
+    paddingVertical: 0,
   },
-  headerOptions: {
-    fontSize: 10,
+  iconHeart: {
+    width: 20,
   },
+  headerOptions: {},
   headerOptionsName: {
     flexDirection: "row",
     width: 40,
   },
-  headerOptionsLine: {
-    borderRightWidth: 1,
-    height: 40,
-    paddingTop: 8,
-    paddingBottom: 8,
-    paddingRight: 12,
+  headerOptionsText: {
+    color: "rgba(28, 27, 31, 0.6)",
+    fontSize: 12,
+    lineHeight: 24,
+    marginTop: 2,
+    fontWeight: "600",
+  },
+  tableContainer: {
+    paddingHorizontal: 0,
+    paddingLeft: 16,
+  },
+  tableNameTitle: {
+    flex: 0,
+    width: 40,
+  },
+  tableTitle: {
     justifyContent: "center",
-    borderColor: "#ccc",
+    flex: 1,
+    borderLeftWidth: 1,
+    borderLeftColor: "rgba(28, 27, 31, 0.6)",
+  },
+  nameWrapper: {
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "center",
   },
 });
 export default styles;

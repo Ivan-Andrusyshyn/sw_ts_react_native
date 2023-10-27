@@ -1,8 +1,11 @@
 import React, { useState } from "react";
-import { Text, TouchableOpacity, View, StyleSheet } from "react-native";
+import { Text, TouchableOpacity } from "react-native";
 import { MaterialCommunityIcons, AntDesign } from "@expo/vector-icons";
 import { useCharacterContext } from "../../context/CharacterContext";
 import styles from "./styles";
+import { DataTable } from "react-native-paper";
+import tableHeaders from "./tableData";
+
 const CharHeader = () => {
   const { sortCharactersAlphabetically } = useCharacterContext();
   const [sortDirection, setSortDirection] = useState<"asc" | "desc" | "none">(
@@ -10,48 +13,57 @@ const CharHeader = () => {
   );
 
   const handleSortClick = () => {
+    let newSortDirection: "asc" | "desc" | "none";
     if (sortDirection === "asc") {
-      sortCharactersAlphabetically("desc");
-      setSortDirection("desc");
+      newSortDirection = "desc";
     } else if (sortDirection === "desc") {
-      sortCharactersAlphabetically("none");
-      setSortDirection("none");
+      newSortDirection = "none";
     } else {
-      sortCharactersAlphabetically("asc");
-      setSortDirection("asc");
+      newSortDirection = "asc";
+    }
+    sortCharactersAlphabetically(newSortDirection);
+    setSortDirection(newSortDirection);
+  };
+  const handleChangeIcon = () => {
+    if (sortDirection === "asc") {
+      return <AntDesign name="arrowup" size={16} color="#BDBDBD" />;
+    } else if (sortDirection === "desc") {
+      return <AntDesign name="arrowdown" size={16} color="#BDBDBD" />;
     }
   };
-
   return (
-    <View style={styles.header}>
-      <View style={styles.headerOptionsLine}>
-        <MaterialCommunityIcons name="heart" size={20} color="#000" />
-      </View>
-      <TouchableOpacity onPress={handleSortClick}>
-        <View style={styles.headerOptionsLine}>
-          <View style={styles.headerOptionsName}>
-            <Text style={styles.headerOptions}>Name</Text>
-            {sortDirection === "asc" ? (
-              <AntDesign name="arrowup" size={16} color="#BDBDBD" />
-            ) : sortDirection === "desc" ? (
-              <AntDesign name="arrowdown" size={16} color="#BDBDBD" />
-            ) : null}
-          </View>
-        </View>
-      </TouchableOpacity>
-      <View style={styles.headerOptionsLine}>
-        <Text style={styles.headerOptions}>Birth Year</Text>
-      </View>
-      <View style={styles.headerOptionsLine}>
-        <Text style={styles.headerOptions}>Gender</Text>
-      </View>
-      <View style={styles.headerOptionsLine}>
-        <Text style={styles.headerOptions}>Home World</Text>
-      </View>
-      <View style={styles.headerOptionsLine}>
-        <Text style={styles.headerOptions}>Species</Text>
-      </View>
-    </View>
+    <DataTable style={styles.tableHeader}>
+      <DataTable.Header style={styles.tableContainer}>
+        {tableHeaders.map((header, index) => (
+          <DataTable.Title
+            key={index}
+            style={
+              header.label === "heart"
+                ? styles.tableNameTitle
+                : styles.tableTitle
+            }
+          >
+            {header.label === "Name" ? (
+              <TouchableOpacity
+                onPress={handleSortClick}
+                style={styles.nameWrapper}
+              >
+                <Text style={styles.headerOptionsText}>{header.label}</Text>
+                {handleChangeIcon()}
+              </TouchableOpacity>
+            ) : header.label === "heart" ? (
+              <MaterialCommunityIcons
+                name={header.label}
+                size={20}
+                color="#000"
+              />
+            ) : (
+              header.label
+            )}
+          </DataTable.Title>
+        ))}
+      </DataTable.Header>
+    </DataTable>
   );
 };
 
