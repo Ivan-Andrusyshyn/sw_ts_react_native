@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     flex: 1,
     borderLeftWidth: 1,
-    borderLeftColor: "rgba(28, 27, 31, 0.6)",
+    borderLeftColor: "#ccc",
   },
   nameWrapper: {
     display: "flex",
